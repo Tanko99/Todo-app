@@ -13,12 +13,12 @@ function addTodos(){
         return;
     }
     todos.push({
-        id: Date.(),
+        id: Date.now(),
         text: todoText,
         completed: false
     });
     saveTodos();
-    displayTodos();
+    showTodos();
     todoInput.value = '';
 
 }
@@ -31,34 +31,37 @@ function showTodos(){
         const li = document.createElement("li");
 
         li.innerHTML = `
-        <span class="${todo.completed ? 'completed'  : ''}"> ${todo.text}</span>
-        <button onClick="toggleTodos(${todo.id})">✔</button>
-        <button onClick="editTodos(${todo.id})"> ✏ </button>
-        <button onClick="deleteTodos(${todo.id})">❌</button>
-        `
+        <span class="${todo.completed ? 'completed'  : ''}">${todo.text}</span>
+        <button onclick="toggleTodos(${todo.id})">✔</button>
+        <button onclick="editTodos(${todo.id})"> ✏ </button>
+        <button onclick="deleteTodos(${todo.id})">❌</button>
+        `;
         ul.appendChild(li);
     });
 }
 
 //This function toggles todos as completed when a particular task is completed.
 function toggleTodos(id){
-    todos = todos.map(todo => todo.id === id ? {...todo, completed: [todo.completed]  } : todo );
+    todos = todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo );
     saveTodos();
-    displayTodos();
+    showTodos();
 }
 
 //This function enables users to edit their tasks
 
-function editTodos(){
-    const newText = prompt("Edit your todos");
-    if(!newtext) return;
-    todos = todos.map(todo => todo.id === id ? {...todo, text: {newText} } : todo );
+function editTodos(id){
+    const newText = prompt("Edit your todos". todo.text);
+    if(!newText.trim()) return;
+    todos = todos.map(todo => todo.id === id ? {...todo, text: newText} : todo );
     saveTodos();
-    displayTodos();
+    showTodos();
 }
 
 //This function neables users to delete a task completely.
 function deleteTodos(id){
     todos = todos.filter(todo => todo.id !== id);
-    displayTodos();
+    saveTodos();
+    showTodos();
 }
+document.getElementById("btn").addEventListener("click", addTodos);
+showTodos();
