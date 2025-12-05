@@ -1,3 +1,4 @@
+const addBtn = document.getElementById("btn");
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
 //This function helps saves todos in a local storage
 function saveTodos(){
@@ -32,9 +33,9 @@ function showTodos(){
 
         li.innerHTML = `
         <span class="${todo.completed ? 'completed'  : ''}">${todo.text}</span>
-        <button onclick="toggleTodos(${todo.id})">✔</button>
-        <button onclick="editTodos(${todo.id})"> ✏ </button>
-        <button onclick="deleteTodos(${todo.id})">❌</button>
+        <button onclick="toggleTodos(${todo.id})">✔ Completed</button>
+        <button onclick="editTodos(${todo.id})"> Edit </button>
+        <button onclick="deleteTodos(${todo.id})">Remove</button>
         `;
         ul.appendChild(li);
     });
@@ -63,5 +64,5 @@ function deleteTodos(id){
     saveTodos();
     showTodos();
 }
-document.getElementById("btn").addEventListener("click", addTodos);
+addBtn.addEventListener("click", addTodos);
 showTodos();
