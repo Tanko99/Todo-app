@@ -51,7 +51,7 @@ function toggleTodos(id){
 //This function enables users to edit their tasks
 
 function editTodos(id){
-    const newText = prompt("Edit your todos". todo.text);
+    const newText = prompt("Edit your todos", );
     if(!newText.trim()) return;
     todos = todos.map(todo => todo.id === id ? {...todo, text: newText} : todo );
     saveTodos();
