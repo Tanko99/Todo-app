@@ -5,11 +5,13 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: black;
 }
 h1 {
     text-align: center;
     font-weight: bold;
     margin: 15px 16px;
+    color: #bbb;
 }
 
 #container {
@@ -21,10 +23,12 @@ h1 {
     gap: 10px;
 }
 #to-do {
+    width: 200px;
     padding: 8px;
     margin:  8px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    background-color: #ddd;
 }
 #btn {
     border: none;
@@ -32,7 +36,7 @@ h1 {
     padding: 8px;
     border-radius: 10px;
     background-color: #0000ff;
-    color: white;
+    color: #ccc;
     cursor: pointer;
     font-weight: bold;
     font-size: large;
@@ -52,13 +56,12 @@ ul {
     align-items: center;
     padding: 8px;
     margin: 7px;
-    background-color: #333;
-    color: white;
+    background-color: #bbb;
+    color: #333;
     
 }
 button {
     padding: 8px;
-    background-color: #ff4545;
     color: white;
     border-radius: 5px;
     cursor: pointer;
