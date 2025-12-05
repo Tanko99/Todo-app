@@ -23,7 +23,7 @@ h1 {
     gap: 10px;
 }
 #to-do {
-    width: 200px;
+    width: 300px;
     padding: 8px;
     margin:  8px;
     border: 1px solid #ccc;
@@ -56,13 +56,20 @@ ul {
     align-items: center;
     padding: 8px;
     margin: 7px;
-    background-color: #bbb;
+    background-color: #ddd;
     color: #333;
+    border-radius: 5px;
     
 }
 button {
-    padding: 8px;
+    background-color: #ff4545;
+    padding: 6px;
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: 0.1;
 }
